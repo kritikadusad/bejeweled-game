@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Board.css';
 
+const jewels = [1, 2, 3, 4, 5, 6, 7];
 class Board extends Component {
     constructor(props){
         super(props);
@@ -10,41 +11,60 @@ class Board extends Component {
         //Bindings:
         this.generateJewel = this.generateJewel.bind(this)
         this.createGrid = this.createGrid.bind(this)
+        this.jewelRemove = this.jewelRemove.bind(this)
+        this.checkAdjacentCells = this.checkAdjacentCells.bind(this)
     }
-    generateJewel() {
+    generateJewel(arr) {
           //For now, jewels are represented as numbers between 1 and 7.
-          const jewels = [1, 2, 3, 4, 5, 6, 7];
-          return jewels[Math.floor(jewels.length * Math.random())];
+          return arr[Math.floor(arr.length * Math.random())];
     }
-    createGrid() {
-            let grid = [];
-            // Making a 8x8 grid 
-            for (let i = 0; i < 8; i++){
-                grid[i] = [];
-                for (let j = 0; j < 8; j++){
-                    const new_jewel = this.generateJewel();
-                    if (i > 1 && new_jewel === grid[i-1][j]) {
-                        console.log("found same adj cell.")
-                        if (new_jewel === grid[i-2][j]){
-                            const new_jewel = this.generateJewel();
-                        }
+    checkAdjacentCells( newJewel, adjacentJewel1, adjacentJewel2 ){
+        if (newJewel === adjacentJewel1 && adjacentJewel1 === adjacentJewel2) {
+                return true
+            } 
+        return false
+    }
+    jewelRemove(arr, jewel) {
+       return arr.filter(function(ele){
+          return ele !== jewel;
+       });
+    }
+    createGrid(arr) {
+    let grid = [];
+    // Making a 8x8 grid 
+        for (let i = 0; i < 8; i++){
+            grid[i] = [];
+            for (let j = 0; j < 8; j++){
+                let newJewel = this.generateJewel(arr);
+                if (i > 1) {
+                    let sameCell = this.checkAdjacentCells(newJewel, grid[i-1][j] , grid[i-2][j]);
+                    console.log(newJewel, grid[i-1][j], grid[i-2][j],sameCell)
+                    if (sameCell) {
+                        let filteredArr = this.jewelRemove(arr, newJewel)
+                        console.log(filteredArr)
+                        newJewel = this.generateJewel(filteredArr);
+                        console.log(newJewel)
                     }
-                    else if (j > 1 && new_jewel === grid[i][j-1]) {
-                        console.log("found same adj cell.")
-                        if (new_jewel === grid[i][j-2]) {
-                            const new_jewel = this.generateJewel();
-                        } 
-                    }
-                    grid[i][j] = [new_jewel];
                 }
+                if (j > 1) {
+                    let sameCell = this.checkAdjacentCells(newJewel, grid[i][j-1] , grid[i][j-1]);
+                    console.log(sameCell)
+                    if (sameCell) {
+                        let filteredArr = this.jewelRemove(arr, newJewel) 
+                        newJewel = this.generateJewel(filteredArr);
+                    }
+                }
+                grid[i][j] = newJewel;
             }
-            return grid
+        }
+        return grid
     }
+
     resetGame () {
         this.setState( { game: [] })
     } 
   render() {
-    const boardGrid = this.createGrid()
+    const boardGrid = this.createGrid(jewels)
     let boardDiv = <div />
     boardDiv = 
         <div>
