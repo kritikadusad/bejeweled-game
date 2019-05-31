@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cell from './Cell.js';
 import './Board.css';
 
 const jewels = [1, 2, 3, 4, 5, 6, 7];
@@ -63,26 +64,33 @@ class Board extends Component {
     resetGame () {
         this.setState( { game: [] })
     } 
-  render() {
-    const boardGrid = this.createGrid(jewels)
-    let boardDiv = <div />
-    boardDiv = 
-        <div>
-            {boardGrid.map(jewel=>
-                <div className="grid-container">
-                    <div className="grid-item"> { jewel } </div>
-                </div>
-            )}
-        </div>;
+    render() {
+        const boardGrid = this.createGrid(jewels)
+        console.log(boardGrid)
+        let gridDiv = <div/>;
+        let board = [];
+        for ( let row of boardGrid ){
+            for ( let jewel of  row) {
+                board.push(jewel) ;   
+            }    
+        gridDiv  = 
+            <div className="grid-container">
+                {board.map(
+                    jewel=> 
+                        <div className = "grid-item">
+                             <Cell jewel = { jewel } />
+                        </div>
+                )}
+            </div>  
+        }
 
-    return (
-        <div className="board">
-            { boardDiv }
-            <br />
-            <button className="reset-button" onClick = { this.resetGame.bind(this) }>Reset</button>    
-        </div>
-    );
-  }
+        return (
+            <div className = "board">
+                {gridDiv}
+                <button className="reset-button" onClick = { this.resetGame.bind(this) }>Reset</button>    
+            </div>
+        );
+    }
 }
 
 export default Board;
