@@ -1,8 +1,13 @@
 
-## Available Scripts
+## Bejeweled game grid setup
+Here are the instructions to set up everything to run this app on your local machine. 
+I have used Facebook's Create React App, an environment that comes pre-configured with all the requirements needed. 
+Make sure you have 5.2 or higher in Node.js [Node.js](https://nodejs.org/en/download/)
+Please clone the bejeweled-game repository into your machine. 
+Once the cloning is complete, move into the bejeweled directory:
+## `cd bejeweled-game`
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -18,7 +23,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-<<<<<<< HEAD
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
