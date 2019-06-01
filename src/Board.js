@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cell from './Cell.js';
 import './Board.css';
-
+import shortid from 'shortid';
 const jewels = [1, 2, 3, 4, 5, 6, 7];
 class Board extends Component {
     constructor(props){
@@ -47,7 +47,7 @@ class Board extends Component {
                         let filteredArr = this.jewelRemove(arr, newJewel)
                        // console.log(filteredArr)
                         newJewel = this.generateJewel(filteredArr);
-                        console.log(newJewel)
+                       // console.log(newJewel)
                     }
                 }
                 if (j > 1) {
@@ -75,7 +75,7 @@ class Board extends Component {
             count++;
             }
         //Check cell below the given cell position
-        if (i <= 6 && cell === grid[i-1][j] ){
+        if (i <= 5 && cell === grid[i-1][j] ){
             count++;
             }
         //Check cell on the left of the given cell position
@@ -83,7 +83,7 @@ class Board extends Component {
             count++;
             }
         //Check cell on the right of the given cell position
-        if (j <= 6 && cell === grid[i][j-1] ){
+        if (j <= 5 && cell === grid[i][j-1] ){
             count++;
             }
         return count
@@ -148,7 +148,7 @@ class Board extends Component {
             <div className="grid-container">
                 {board.map(
                     jewel=> 
-                        <div className = "grid-item">
+                        <div className = "grid-item" key={ shortid.generate() }>
                              <Cell jewel = { jewel } />
                         </div>
                 )}
