@@ -1,11 +1,11 @@
 
-## Bejeweled game grid setup
+## Bejeweled game 
 Here are the instructions to set up everything to run this app on your local machine. 
 I have used Facebook's Create React App, an environment that comes pre-configured with all the requirements needed. 
-Make sure you have 5.2 or higher in Node.js [Node.js](https://nodejs.org/en/download/)
+Make sure you have 5.2 or higher in [Node.js](https://nodejs.org/en/download/)
 Please clone the bejeweled-game repository into your machine. 
 Once the cloning is complete, move into the bejeweled directory:
-## `cd bejeweled-game`
+### `cd bejeweled-game`
 
 In the project directory, you can run:
 ### `npm start`
@@ -33,5 +33,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
