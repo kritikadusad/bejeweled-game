@@ -9,16 +9,16 @@
 }
 .board h3 {
     font-weight: lighter;
-    font-size: 2em;
+    font-size: 2.5em;
     color: white;
 }
 .reset-button {
-    font-size: 1em;
-    font-weight: lighter;
+    font-size: 1.5em;
+    font-weight: normal;
     padding-right: 3em;
     padding-left: 3em;
     color: white;
-    opacity: 0.6;
+    opacity: 0.8;
     cursor: pointer;
     transition: 0.3s;
     border: none;
