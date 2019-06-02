@@ -71,11 +71,12 @@ class Board extends Component {
     countSameAdjacent( cell, i, j, grid){
         let count = 0;
         //Check cell above the given cell position
-        if ( i >= 1 && cell === grid[i+1][j] ){
+        if ( i >= 1 && cell === grid[i-1][j] ){
             count++;
             }
         //Check cell below the given cell position
-        if (i <= 5 && cell === grid[i-1][j] ){
+        if (i <= 6 && cell === grid[i+1][j] ){
+            console.log(i, i-1)
             count++;
             }
         //Check cell on the left of the given cell position
@@ -83,7 +84,7 @@ class Board extends Component {
             count++;
             }
         //Check cell on the right of the given cell position
-        if (j <= 5 && cell === grid[i][j-1] ){
+        if (j <= 6 && cell === grid[i][j+1] ){
             count++;
             }
         return count
