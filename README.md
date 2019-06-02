@@ -8,7 +8,7 @@ Once the cloning is complete, move into the bejeweled directory:
 ### `cd bejeweled-game`
 
 In the project directory, you can run:
-### 'npm install`
+### `npm install`
 followed by:
 ### `npm start`
 
