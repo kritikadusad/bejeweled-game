@@ -1,5 +1,6 @@
 
 ## Bejeweled game 
+Check out the grid of bejeweled game [here](https://kritikadusad.github.io/bejeweled-game/). 
 Here are the instructions to set up everything to run this app on your local machine. 
 I have used Facebook's Create React App, an environment that comes pre-configured with all the requirements needed. 
 Make sure you have 5.2 or higher in [Node.js](https://nodejs.org/en/download/).
