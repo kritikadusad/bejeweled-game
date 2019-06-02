@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bejeweled-game/static/css/main.237ef653.chunk.css",
+    "main.js": "/bejeweled-game/static/js/main.7824a999.chunk.js",
+    "main.js.map": "/bejeweled-game/static/js/main.7824a999.chunk.js.map",
+    "runtime~main.js": "/bejeweled-game/static/js/runtime~main.c2f9bb20.js",
+    "runtime~main.js.map": "/bejeweled-game/static/js/runtime~main.c2f9bb20.js.map",
+    "static/js/2.fc3fcb39.chunk.js": "/bejeweled-game/static/js/2.fc3fcb39.chunk.js",
+    "static/js/2.fc3fcb39.chunk.js.map": "/bejeweled-game/static/js/2.fc3fcb39.chunk.js.map",
+    "index.html": "/bejeweled-game/index.html",
+    "precache-manifest.46381417d28d474bb96fd59294804d1b.js": "/bejeweled-game/precache-manifest.46381417d28d474bb96fd59294804d1b.js",
+    "service-worker.js": "/bejeweled-game/service-worker.js",
+    "static/css/main.237ef653.chunk.css.map": "/bejeweled-game/static/css/main.237ef653.chunk.css.map"
+  }
+}
