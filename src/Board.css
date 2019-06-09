@@ -1,77 +1,82 @@
-.board{
+// @format
+.board {
   background-color: #282c34;
   display: flex;
   text-align: center;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  align-items: center ;
+  align-items: center;
 }
 .board h3 {
-    font-weight: lighter;
-    font-size: 2.5em;
-    color: white;
+  font-weight: lighter;
+  font-size: 2.5em;
+  color: white;
 }
 .reset-button {
-    font-size: 1.5em;
-    font-weight: normal;
-    padding-right: 3em;
-    padding-left: 3em;
-    color: white;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: 0.3s;
-    border: none;
-    margin-block-start: 1em;
-    border-radius: 20px;
-    background-color: #0F8B8D;  
-}  
-.reset-button:hover {opacity: 1}
+  font-size: 1.5em;
+  font-weight: normal;
+  padding-right: 3em;
+  padding-left: 3em;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  margin-block-start: 1em;
+  border-radius: 20px;
+  background-color: #0f8b8d;
+}
+.reset-button:hover {
+  opacity: 1;
+}
 
 .grid-container {
-    font-size: 2em;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    grid-gap: 0px;
-    justify-items: center;
-    align-items: center;
+  font-size: 2em;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 0px;
+  justify-items: center;
+  align-items: center;
 }
 
 .grid-item {
-    border-style: solid;
-    opacity: 1;
-    font-size: 1.5em;
-    align-items: center;
+  border-style: solid;
+  opacity: 1;
+  font-size: 1.5em;
+  align-items: center;
 }
-.grid-item:hover {opacity: 0.6}
-.pink{
-   content: "";
-   color: #dd7373;
-   background-color: #dd7373;
+.grid-item:hover {
+  opacity: 0.6;
 }
-.white{
-   background-color: #e0e2db;
-   color: #e0e2db;
+.pink {
+  content: '';
+  color: #dd7373;
+  background-color: #dd7373;
 }
-.blue{
-   background-color: #067bc2;
-   color: #067bc2;
+.white {
+  background-color: #e0e2db;
+  color: #e0e2db;
 }
-.purple{
-   background-color: #3d348b;
-   color: #3d348b;
+.blue {
+  background-color: #067bc2;
+  color: #067bc2;
 }
-.red{
-   background-color: #ff3c38;
-   color: #ff3c38;
+.purple {
+  background-color: #3d348b;
+  color: #3d348b;
 }
-.yellow{
-   color: #e6af2e;
-   background-color: #e6af2e;
+.red {
+  background-color: #ff3c38;
+  color: #ff3c38;
+}
+.yellow {
+  color: #e6af2e;
+  background-color: #e6af2e;
 }
 
-.aqua{
-   background-color: #90C290;
-   color: #90C290;
+.aqua {
+  background-color: #90c290;
+  color: #90c290;
 }
