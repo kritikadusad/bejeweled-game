@@ -17,52 +17,45 @@ class Board extends Component {
     this.countSameAdjacent = this.countSameAdjacent.bind(this);
     this.checkGrid = this.checkGrid.bind(this);
     this.checkMovePossible = this.checkMovePossible.bind(this);
-    this.checkAdjacentCells = this.checkAdjacentCells.bind(this);
+    this.checkSameJewelsAndRemove = this.checkSameJewelsAndRemove.bind(this);
   }
   generateJewel(arr) {
     // For now, jewels are represented as numbers between 1 and 7.
     return arr[Math.floor(arr.length * Math.random())];
   }
-  checkAdjacentCells(newJewel, adjacentJewel1, adjacentJewel2) {
-    if (newJewel === adjacentJewel1 && adjacentJewel1 === adjacentJewel2) {
-      return true;
+  checkSameJewelsAndRemove(arr, adjacentJewel1, adjacentJewel2) {
+    if (adjacentJewel1 === adjacentJewel2) {
+      return this.jewelRemove(arr, adjacentJewel1);
     }
-    return false;
+    return arr;
   }
   jewelRemove(arr, jewel) {
     return arr.filter(function(ele) {
       return ele !== jewel;
     });
   }
-  createGrid(arr) {
+  createGrid(arr_input) {
     let grid = [];
-    // Making a 8x8 grid
+    // Making an 8x8 grid
     for (let i = 0; i < 8; i++) {
       grid[i] = [];
       for (let j = 0; j < 8; j++) {
-        let newJewel = this.generateJewel(arr);
+        let arr = Array.from(arr_input);
         if (i > 1) {
-          let sameCell = this.checkAdjacentCells(
-            newJewel,
+          arr = this.checkSameJewelsAndRemove(
+            arr,
             grid[i - 1][j],
             grid[i - 2][j],
           );
-          if (sameCell) {
-            let filteredArr = this.jewelRemove(arr, newJewel);
-            newJewel = this.generateJewel(filteredArr);
-          }
         }
         if (j > 1) {
-          let sameCell = this.checkAdjacentCells(
-            newJewel,
+          arr = this.checkSameJewelsAndRemove(
+            arr,
             grid[i][j - 1],
-            grid[i][j - 1],
+            grid[i][j - 2],
           );
-          if (sameCell) {
-            let filteredArr = this.jewelRemove(arr, newJewel);
-            newJewel = this.generateJewel(filteredArr);
-          }
         }
+        let newJewel = this.generateJewel(arr);
         grid[i][j] = newJewel;
       }
     }
