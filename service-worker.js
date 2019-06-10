@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bejeweled-game/precache-manifest.46381417d28d474bb96fd59294804d1b.js"
+  "/bejeweled-game/precache-manifest.cc7d7c6bf1325cf4b95082b47668191f.js"
 );
 
 self.addEventListener('message', (event) => {
